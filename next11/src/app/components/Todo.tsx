@@ -30,9 +30,9 @@ export default function Todo(todo: Todo) {
         setIsFetching(false)
 
         startTransition(() => {
-            // Refresh the current route and fetch new data 
-            // from the server without losing 
-            // client-side browser or React state.
+            // 현재 경로를 새로 고치고 새 데이터를 가져옵니다
+            // 서버에서 손실 없이 제공
+            // 리액트 상태를 유지 하면서 클라이언트 사이드 랜더링  
             router.refresh()
         })
     }
@@ -55,9 +55,9 @@ export default function Todo(todo: Todo) {
         setIsFetching(false)
 
         startTransition(() => {
-            // Refresh the current route and fetch new data 
-            // from the server without losing 
-            // client-side browser or React state.
+            // 현재 경로를 새로 고치고 새 데이터를 가져옵니다
+            // 서버에서 손실 없이 제공
+            // 리액트 상태를 유지 하면서 클라이언트 사이드 랜더링  
             router.refresh()
         })
     }
