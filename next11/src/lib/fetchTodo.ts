@@ -1,6 +1,7 @@
 
 export default async function fetchTodo(id: string) {
-    const res = await fetch(`http://127.0.0.1:3500/todos/${id}`)
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    const res = await fetch(`${apiUrl}/todos/${id}`)
 
 
     if (!res.ok) return undefined

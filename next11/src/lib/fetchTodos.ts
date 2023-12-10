@@ -1,6 +1,7 @@
 
 export default async function fetchTodos() {
-    const res = await fetch(`http://127.0.0.1:3500/todos`)
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    const res = await fetch(`${apiUrl}/todos`)
 
     const todos: Todo[] = await res.json()
 

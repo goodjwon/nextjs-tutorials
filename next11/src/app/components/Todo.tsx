@@ -10,12 +10,13 @@ export default function Todo(todo: Todo) {
     const [isPending, startTransition] = useTransition()
     const [isFetching, setIsFetching] = useState(false)
 
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
     const isMutating = isFetching || isPending
 
     const handleChange = async (e: ChangeEvent<HTMLInputElement>) => {
         setIsFetching(true)
 
-        const res = await fetch(`http://127.0.0.1:3500/todos/${todo.id}`, {
+        const res = await fetch(`${apiUrl}/todos/${todo.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

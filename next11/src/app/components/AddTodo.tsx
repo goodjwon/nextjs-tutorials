@@ -15,6 +15,7 @@ export default function AddTodo() {
     const [isPending, startTransition] = useTransition()
     const [isFetching, setIsFetching] = useState(false)
     const [data, setData] = useState(initState)
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
     const isMutating = isFetching || isPending
 
@@ -25,7 +26,9 @@ export default function AddTodo() {
 
         setIsFetching(true)
 
-        const res = await fetch(`http://127.0.0.1:3500/todos`, {
+        console.log(apiUrl)
+
+        const res = await fetch(`${apiUrl}/todos`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
