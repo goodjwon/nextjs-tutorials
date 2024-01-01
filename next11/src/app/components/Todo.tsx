@@ -41,7 +41,7 @@ export default function Todo(todo: Todo) {
     const handleDelete = async (e: MouseEvent<HTMLButtonElement>) => {
         setIsFetching(true)
 
-        const res = await fetch(`http://127.0.0.1:3500/todos/${todo.id}`, {
+        const res = await fetch(`${apiUrl}/todos/${todo.id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
